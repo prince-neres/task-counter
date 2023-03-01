@@ -1,9 +1,13 @@
 import style from "./Button.module.scss";
 
-export default function Button () {
+type props = {
+  title: string;
+};
+
+export default function Button ({title}: props) {
   return (
     <button className={style.button}>
-      Botão
+      {title}
     </button>
   )
 };
