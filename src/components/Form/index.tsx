@@ -1,32 +1,33 @@
-import Button from "../Button"
+import Button from "../Button";
+import style from "./Form.module.scss";
 
 export default function Form () {
   return (
-    <form>
-      <div>
+    <form className={style.newTask}>
+      <div className={style.inputContainer}>
         <label 
-          htmlFor="tarefa"
+          htmlFor="task"
         >
           Tarefa
         </label>
         <input
-          name="tarefa"
-          id="tarefa"
+          name="task"
+          id="task"
           placeholder="O que você deseja estudar?"
           type="text"
         />
       </div>
-      <div>
+      <div className={style.inputContainer}>
         <label
-          htmlFor="tempo"
+          htmlFor="time"
         >  
           Tempo
         </label>
         <input
           type="time"
           step="1"
-          name="tempo"
-          id="tempo"
+          name="time"
+          id="time"
           min="00:00:00"
           max="01:30:00"
           required
