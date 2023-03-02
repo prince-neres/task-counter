@@ -1,7 +1,7 @@
 export interface iTask {
   name: string,
   time: string,
-  select: boolean,
+  selected: boolean,
   completed: boolean,
   id: string
-}
+};

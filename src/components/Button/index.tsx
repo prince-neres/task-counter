@@ -2,7 +2,7 @@ import style from "./Button.module.scss";
 
 type props = {
   type?: 'submit' | 'reset' | 'button' | undefined,
-  title: string;
+  title: string
 };
 
 export default function Button ({type, title}: props) {

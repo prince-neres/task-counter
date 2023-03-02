@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from "react";
 import Button from "../Button";
 import style from "./Form.module.scss";
 import { iTask } from "../../types/tasks";
@@ -8,7 +8,7 @@ export default function Form ({setTasks}: {setTasks: React.Dispatch<React.SetSta
   const [task, setTask] = useState({
     name: "",
     time: "00:00:00"
-  })
+  });
 
   const saveTask = (event: React.FormEvent) => {
     event.preventDefault();
@@ -17,17 +17,17 @@ export default function Form ({setTasks}: {setTasks: React.Dispatch<React.SetSta
         ...tasks,
         {
           ...task,
-          select: false,
+          selected: false,
           completed: false,
           id: uuidv4()
         }
       ]
-    )
+    );
     setTask({
       name: "",
       time: "00:00:00"
-    })
-  }
+    });
+  };
 
   return (
     <form className={style.newTask} onSubmit={saveTask} >

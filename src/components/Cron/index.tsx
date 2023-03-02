@@ -1,6 +1,6 @@
-import Button from "../Button"
-import Clock from "./Clock"
-import style from  "./Cron.module.scss"
+import Button from "../Button";
+import Clock from "./Clock";
+import style from "./Cron.module.scss";
 
 export default function Cron () {
   return (
@@ -10,9 +10,7 @@ export default function Cron () {
         <Clock />
       </div>
       <div>
-        <Button
-          title="Começar"
-        />
+        <Button title="Começar" />
       </div>
     </div>
   )
