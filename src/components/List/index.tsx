@@ -1,15 +1,8 @@
 import Item from "../Item"
 import style from "./List.module.scss"
+import { iTask } from '../../types/tasks';
 
-export default function List () {
-
-  const tasks = [
-    {
-      name: "React",
-      time: "02:00:00"
-    }
-  ]
-
+export default function List ({tasks}: {tasks: iTask[]}) {
   return (
     <aside className={style.listTasks}>
       <h2>
