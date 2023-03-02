@@ -12,6 +12,10 @@ export default function Form ({setTasks}: {setTasks: React.Dispatch<React.SetSta
   const saveTask = (event: React.FormEvent) => {
     event.preventDefault();
     setTasks(tasks => [...tasks, task])
+    setTask({
+      name: "",
+      time: "00:00:00"
+    })
   }
 
   return (
