@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import Button from "../Button";
 import style from "./Form.module.scss";
-import { iTask } from '../../types/tasks';
+import { iTask } from "../../types/tasks";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Form ({setTasks}: {setTasks: React.Dispatch<React.SetStateAction<iTask[]>>}) {
   const [task, setTask] = useState({
@@ -11,7 +12,17 @@ export default function Form ({setTasks}: {setTasks: React.Dispatch<React.SetSta
 
   const saveTask = (event: React.FormEvent) => {
     event.preventDefault();
-    setTasks(tasks => [...tasks, task])
+    setTasks(
+      tasks => [
+        ...tasks,
+        {
+          ...task,
+          select: false,
+          completed: false,
+          id: uuidv4()
+        }
+      ]
+    )
     setTask({
       name: "",
       time: "00:00:00"
