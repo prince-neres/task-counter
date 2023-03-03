@@ -22,9 +22,8 @@ export default function Cron ({selected}: Props) {
   return (
     <div className={style.cron}>
       <p className={style.title}>Escolha um card e inicie o cronômetro</p>
-      <p>Tempo: {time}</p>
       <div className={style.clockWrapper}>
-        <Clock />
+        <Clock time={time} />
       </div>
       <div>
         <Button title="Começar" />
