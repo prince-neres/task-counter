@@ -16,6 +16,24 @@ function App() {
     })))
   };
 
+  const finalizeTask = () => {
+    if(selected) {
+      setSelected(undefined);
+      setTasks(oldTasks =>
+      oldTasks.map(task => {
+          if(task.id === selected.id) {
+            return {
+              ...task,
+              selected: false,
+              completed: true
+            }
+          }
+          return task;
+        })
+      )
+    };
+  };
+
   return (
     <div className={style.App}>
       <Form setTasks={setTasks} />
@@ -23,7 +41,10 @@ function App() {
         tasks={tasks}
         selectTask={selectTask}
       />
-      <Cron selected={selected} />
+      <Cron
+        finalizeTask={finalizeTask}
+        selected={selected}
+      />
     </div>
   )
 };

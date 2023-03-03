@@ -7,9 +7,10 @@ import style from "./Cron.module.scss";
 
 interface Props {
   selected: iTask | undefined;
+  finalizeTask: () => void;
 };
 
-export default function Cron ({selected}: Props) {
+export default function Cron ({selected, finalizeTask}: Props) {
 
   const [time, setTime] = useState<number>();
 
@@ -19,14 +20,27 @@ export default function Cron ({selected}: Props) {
     }
   }, [selected]);
 
+  const regressive = (counter: number = 0) => {
+    setTimeout(() => {
+      if(counter > 0) {
+        setTime(counter - 1);
+        return regressive(counter -1);
+      }
+      finalizeTask();
+    }, 1000)
+  };
+
   return (
     <div className={style.cron}>
-      <p className={style.title}>Escolha um card e inicie o cronômetro</p>
+      <p className={style.title}>Escolha uma tarefa e inicie o cronômetro</p>
       <div className={style.clockWrapper}>
         <Clock time={time} />
       </div>
       <div>
-        <Button title="Começar" />
+        <Button
+          onClick={() => regressive(time)} 
+          title="Começar"
+        />
       </div>
     </div>
   )
