@@ -11,5 +11,5 @@
 4. `npm start` ou `yarn start`
 
 ## Tecnologias utilizadas:
-* [React.js](https://pt-br.reactjs.org/)
+* [React with Typescript](https://react-typescript-cheatsheet.netlify.app/)
 * [SASS](https://sass-lang.com/)
