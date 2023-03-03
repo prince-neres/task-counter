@@ -10,6 +10,10 @@ function App() {
   const [selected, setSelected] = useState<iTask>();
   const selectTask = (taskSelected: iTask) => {
     setSelected(taskSelected);
+    setTasks(oldTasks => oldTasks.map(task =>({
+      ...task,
+      selected: task.id === taskSelected.id ? true : false
+    })))
   };
 
   return (
@@ -19,7 +23,7 @@ function App() {
         tasks={tasks}
         selectTask={selectTask}
       />
-      <Cron />
+      <Cron selected={selected} />
     </div>
   )
 };

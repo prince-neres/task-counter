@@ -1,4 +1,4 @@
-import { iTask } from "../../types/tasks";
+import { iTask } from "../../../types/tasks";
 import style from "./Item.module.scss";
 
 interface Props extends iTask {
@@ -8,7 +8,7 @@ interface Props extends iTask {
 export default function Item ({name, time, selected, completed, id, selectTask }: Props) {
   return (
     <li 
-      className={style.item} 
+      className={`${style.item} ${selected ? style.itemSelected : ""}`}
       onClick={() => selectTask(
           {
             name,

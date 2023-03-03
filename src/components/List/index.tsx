@@ -1,4 +1,4 @@
-import Item from "../Item";
+import Item from "./Item";
 import style from "./List.module.scss";
 import { iTask } from "../../types/tasks";
 
