@@ -1,4 +1,4 @@
-# Contador de Tarefas
+# Task Counter
 
 <div align="center">
   <img src="./src/assets/previews/task-counter.png">
