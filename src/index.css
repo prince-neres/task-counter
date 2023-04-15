@@ -145,8 +145,8 @@ body {
   display: flex;
   justify-content: center;
   font-family: "Manjari", sans-serif;
-  color: #f0f0f0;
-  background-color: #4c4c4c;
+  color: #b4c6ef;
+  background-color: #0e1526;
   height: 100%;
   width: 100%;
   padding: 16px;
@@ -167,9 +167,9 @@ body {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background: #888;
+  background: #818cf8;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #818cf8;
 }

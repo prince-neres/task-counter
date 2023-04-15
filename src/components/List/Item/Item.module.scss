@@ -1,8 +1,9 @@
 .item {
-  background-color: #939393;
+  background-color: #0f172a;
   border-radius: 8px;
   box-shadow: 2px 4px 4px #0000009f;
   padding: 12px;
+  color: #fff;
   margin-bottom: 8px;
   position: relative;
   cursor: pointer;
@@ -13,7 +14,7 @@
   }
 
   span {
-    color: #d0d0d0;
+    margin-bottom: 100px;
   }
 
   @media screen and (min-width: 1280px) {
@@ -22,13 +23,17 @@
 }
 
 .itemSelected {
-  background-color: #292929;
+  background-color: #213053;
   box-shadow: 2px 4px 4px #0000009f inset;
+  font-weight: bold;
+  color: #fff;
 }
 
 .itemCompleted {
-  background-color: #566f42;
+  background-color: #1fd65f;
   cursor: auto;
+  font-weight: bold;
+  color: #fff;
 
   .concluded {
     display: block;

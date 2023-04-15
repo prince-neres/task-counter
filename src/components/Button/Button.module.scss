@@ -1,16 +1,18 @@
 .button {
   align-self: center;
-  background-color: #41e920;
+  background-color: #1fd65f;
   border-radius: 10px;
   box-shadow: 2px 4px 4px #0000009f;
   color: #ffffff;
   cursor: pointer;
+  font-weight: bold;
   font-size: 1.25rem;
-  padding: 16px;
+  padding: 15px;
   width: 150px;
+  margin: 15px;
 
   &:active {
-    background-color: #7ca6b7;
+    background-color: #18a248;
     box-shadow: 2px 2px 4px #0000009f inset;
   }
 }
