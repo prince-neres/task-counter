@@ -8,26 +8,25 @@ import style from "./Cron.module.scss";
 interface Props {
   selected: iTask | undefined;
   finalizeTask: () => void;
-};
+}
 
-export default function Cron ({selected, finalizeTask}: Props) {
-
+export default function Cron({ selected, finalizeTask }: Props) {
   const [time, setTime] = useState<number>();
 
-  useEffect(()=>{
-    if(selected?.time) {
+  useEffect(() => {
+    if (selected?.time) {
       setTime(timeToSeconds(selected.time));
     }
   }, [selected]);
 
   const regressive = (counter: number = 0) => {
     setTimeout(() => {
-      if(counter > 0) {
+      if (counter > 0) {
         setTime(counter - 1);
-        return regressive(counter -1);
+        return regressive(counter - 1);
       }
       finalizeTask();
-    }, 1000)
+    }, 1000);
   };
 
   return (
@@ -37,11 +36,8 @@ export default function Cron ({selected, finalizeTask}: Props) {
         <Clock time={time} />
       </div>
       <div>
-        <Button
-          onClick={() => regressive(time)} 
-          title="Começar"
-        />
+        <Button onClick={() => regressive(time)} title="Começar" />
       </div>
     </div>
-  )
-};
+  );
+}

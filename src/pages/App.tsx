@@ -10,44 +10,39 @@ function App() {
   const [selected, setSelected] = useState<iTask>();
   const selectTask = (taskSelected: iTask) => {
     setSelected(taskSelected);
-    setTasks(oldTasks => oldTasks.map(task =>({
-      ...task,
-      selected: task.id === taskSelected.id ? true : false
-    })))
+    setTasks((oldTasks) =>
+      oldTasks.map((task) => ({
+        ...task,
+        selected: task.id === taskSelected.id ? true : false,
+      }))
+    );
   };
 
   const finalizeTask = () => {
-    if(selected) {
+    if (selected) {
       setSelected(undefined);
-      setTasks(oldTasks =>
-      oldTasks.map(task => {
-          if(task.id === selected.id) {
+      setTasks((oldTasks) =>
+        oldTasks.map((task) => {
+          if (task.id === selected.id) {
             return {
               ...task,
               selected: false,
-              completed: true
-            }
+              completed: true,
+            };
           }
           return task;
         })
-      )
-    };
+      );
+    }
   };
 
   return (
     <div className={style.App}>
       <Form setTasks={setTasks} />
-      <List
-        tasks={tasks}
-        selectTask={selectTask}
-      />
-      <Cron
-        finalizeTask={finalizeTask}
-        selected={selected}
-      />
+      <List tasks={tasks} selectTask={selectTask} />
+      <Cron finalizeTask={finalizeTask} selected={selected} />
     </div>
-  )
-};
+  );
+}
 
 export default App;
- 
