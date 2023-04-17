@@ -18,6 +18,16 @@ function App() {
     );
   };
 
+  const removeTask = (id: string) => {
+    const index = tasks.findIndex((task) => task.id === id);
+
+    if (index !== -1) {
+      tasks.splice(index, 1);
+    }
+
+    setTasks(tasks);
+  };
+
   const finalizeTask = () => {
     if (selected) {
       setSelected(undefined);
@@ -39,7 +49,7 @@ function App() {
   return (
     <div className={style.App}>
       <Form setTasks={setTasks} />
-      <List tasks={tasks} selectTask={selectTask} />
+      <List tasks={tasks} selectTask={selectTask} removeTask={removeTask} />
       <Cron finalizeTask={finalizeTask} selected={selected} />
     </div>
   );

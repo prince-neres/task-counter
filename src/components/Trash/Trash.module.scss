@@ -1,0 +1,12 @@
+.trash {
+  cursor: pointer;
+  color: #d85251;
+  height: 40px;
+  width: 40px;
+  vertical-align: bottom;
+}
+
+.trash:hover {
+  color: red;
+  filter: drop-shadow(5px 5px 10px red);
+}
